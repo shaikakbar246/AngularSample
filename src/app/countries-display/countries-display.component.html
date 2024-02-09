@@ -1,0 +1,41 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="code">
+      <th mat-header-cell *matHeaderCellDef> code. </th>
+      <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="saqacode">
+      <th mat-header-cell *matHeaderCellDef> saqacode </th>
+      <td mat-cell *matCellDef="let element"> {{element.saqacode}} </td>
+    </ng-container>
+    <ng-container matColumnDef="oid">
+      <th mat-header-cell *matHeaderCellDef> oid </th>
+      <td mat-cell *matCellDef="let element"> {{element.oid}} </td>
+    </ng-container>
+    <ng-container matColumnDef="sarscode">
+      <th mat-header-cell *matHeaderCellDef> sarscode </th>
+      <td mat-cell *matCellDef="let element"> {{element.sarscode}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator [pageSize]="2" [pageSizeOptions]="[2, 5, 10, 25, 100]">
+  </mat-paginator>
+</div>
